@@ -1,0 +1,975 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Default theme variables - Improved contrast */
+    --background: 240 10% 3%;
+    --foreground: 240 10% 95%;
+
+    --card: 240 10% 6%;
+    --card-foreground: 240 10% 95%;
+
+    --popover: 240 10% 6%;
+    --popover-foreground: 240 10% 95%;
+
+    --primary: 270 60% 55%;
+    --primary-foreground: 240 10% 98%;
+
+    --secondary: 240 10% 10%;
+    --secondary-foreground: 240 10% 95%;
+
+    --muted: 240 10% 10%;
+    --muted-foreground: 240 10% 70%;
+
+    --accent: 270 60% 65%;
+    --accent-foreground: 240 10% 98%;
+
+    --destructive: 0 62% 55%;
+    --destructive-foreground: 240 10% 98%;
+
+    --border: 240 10% 12%;
+    --input: 240 10% 12%;
+    --ring: 240 10% 40%;
+
+    --radius: 0.25rem;
+
+    /* Tumblr-specific colors */
+    --tumblr-blue: 180 100% 55%;
+    --tumblr-purple: 270 60% 65%;
+    --tumblr-text: 270 30% 85%;
+    --tumblr-dark: 240 10% 6%;
+    --tumblr-darker: 240 10% 3%;
+    --tumblr-sidebar: 240 10% 2%;
+    --tumblr-toggle-active: 196 100% 55%;
+    --tumblr-royal-purple: 270 60% 50%;
+  }
+
+  /* Retro Terminal Theme - Enhanced with better contrast */
+  [data-theme="retro"] {
+    --background: 120 100% 2%;
+    --foreground: 120 100% 80%;
+
+    --card: 120 100% 4%;
+    --card-foreground: 120 100% 80%;
+
+    --popover: 120 100% 4%;
+    --popover-foreground: 120 100% 80%;
+
+    /* Improved contrast - darker green with white text */
+    --primary: 120 100% 35%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 120 100% 8%;
+    --secondary-foreground: 120 100% 80%;
+
+    --muted: 120 100% 8%;
+    --muted-foreground: 120 100% 60%;
+
+    /* Improved contrast - darker green with white text */
+    --accent: 120 100% 40%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 120 100% 15%;
+    --input: 120 100% 15%;
+    --ring: 120 100% 50%;
+
+    --tumblr-blue: 120 100% 60%;
+    --tumblr-purple: 120 100% 70%;
+    --tumblr-text: 120 100% 80%;
+    --tumblr-dark: 120 100% 4%;
+    --tumblr-darker: 120 100% 2%;
+    --tumblr-sidebar: 120 100% 1%;
+    --tumblr-toggle-active: 120 100% 60%;
+    --tumblr-royal-purple: 120 100% 50%;
+  }
+
+  /* Synthwave Theme - Enhanced */
+  [data-theme="synthwave"] {
+    --background: 280 50% 5%;
+    --foreground: 280 100% 95%;
+
+    --card: 280 50% 8%;
+    --card-foreground: 280 100% 95%;
+
+    --popover: 280 50% 8%;
+    --popover-foreground: 280 100% 95%;
+
+    --primary: 320 100% 65%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 260 50% 15%;
+    --secondary-foreground: 280 100% 95%;
+
+    --muted: 260 50% 15%;
+    --muted-foreground: 280 100% 75%;
+
+    --accent: 320 100% 65%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 100% 65%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 280 50% 15%;
+    --input: 280 50% 15%;
+    --ring: 320 100% 65%;
+
+    --tumblr-blue: 180 100% 65%;
+    --tumblr-purple: 280 100% 75%;
+    --tumblr-text: 280 100% 95%;
+    --tumblr-dark: 280 50% 8%;
+    --tumblr-darker: 280 50% 5%;
+    --tumblr-sidebar: 280 50% 3%;
+    --tumblr-toggle-active: 320 100% 65%;
+    --tumblr-royal-purple: 320 100% 65%;
+  }
+
+  /* Hacker Theme - Enhanced with better contrast */
+  [data-theme="hacker"] {
+    --background: 110 100% 2%;
+    --foreground: 110 100% 70%;
+
+    --card: 110 100% 4%;
+    --card-foreground: 110 100% 70%;
+
+    --popover: 110 100% 4%;
+    --popover-foreground: 110 100% 70%;
+
+    /* Improved contrast - darker green with white text */
+    --primary: 110 100% 30%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 110 100% 8%;
+    --secondary-foreground: 110 100% 70%;
+
+    --muted: 110 100% 8%;
+    --muted-foreground: 110 100% 50%;
+
+    /* Improved contrast - darker green with white text */
+    --accent: 110 100% 35%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 100% 45%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 110 100% 15%;
+    --input: 110 100% 15%;
+    --ring: 110 100% 45%;
+
+    --tumblr-blue: 110 100% 55%;
+    --tumblr-purple: 110 100% 55%;
+    --tumblr-text: 110 100% 70%;
+    --tumblr-dark: 110 100% 4%;
+    --tumblr-darker: 110 100% 2%;
+    --tumblr-sidebar: 110 100% 1%;
+    --tumblr-toggle-active: 110 100% 55%;
+    --tumblr-royal-purple: 110 100% 45%;
+  }
+
+  /* Light Theme - Enhanced with better contrast */
+  [data-theme="light"] {
+    --background: 0 0% 98%;
+    --foreground: 240 10% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 10%;
+
+    --primary: 270 60% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 240 5% 90%;
+    --secondary-foreground: 240 10% 10%;
+
+    --muted: 240 5% 90%;
+    /* Improved contrast - darker text on light background */
+    --muted-foreground: 240 5% 30%;
+
+    --accent: 270 60% 60%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 240 5% 85%;
+    --input: 240 5% 85%;
+    --ring: 240 10% 40%;
+
+    --tumblr-blue: 180 100% 40%;
+    --tumblr-purple: 270 60% 50%;
+    --tumblr-text: 270 30% 30%;
+    --tumblr-dark: 0 0% 100%;
+    --tumblr-darker: 0 0% 98%;
+    --tumblr-sidebar: 0 0% 95%;
+    --tumblr-toggle-active: 196 100% 40%;
+    --tumblr-royal-purple: 270 60% 45%;
+  }
+
+  /* Cyberpunk Theme - Enhanced with better contrast */
+  [data-theme="cyberpunk"] {
+    --background: 220 50% 3%;
+    --foreground: 60 100% 80%;
+
+    --card: 220 50% 6%;
+    --card-foreground: 60 100% 80%;
+
+    --popover: 220 50% 6%;
+    --popover-foreground: 60 100% 80%;
+
+    /* Improved contrast - darker cyan with white text */
+    --primary: 180 100% 35%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 50% 10%;
+    --secondary-foreground: 60 100% 80%;
+
+    --muted: 220 50% 10%;
+    --muted-foreground: 60 100% 60%;
+
+    /* Improved contrast - darker cyan with white text */
+    --accent: 180 100% 40%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 100% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 50% 15%;
+    --input: 220 50% 15%;
+    --ring: 180 100% 55%;
+
+    --tumblr-blue: 180 100% 55%;
+    --tumblr-purple: 60 100% 70%;
+    --tumblr-text: 60 100% 80%;
+    --tumblr-dark: 220 50% 6%;
+    --tumblr-darker: 220 50% 3%;
+    --tumblr-sidebar: 220 50% 2%;
+    --tumblr-toggle-active: 180 100% 55%;
+    --tumblr-royal-purple: 180 100% 55%;
+  }
+
+  /* Vaporwave Theme - Enhanced with better contrast */
+  [data-theme="vaporwave"] {
+    --background: 300 50% 5%;
+    --foreground: 180 100% 90%;
+
+    --card: 300 50% 8%;
+    --card-foreground: 180 100% 90%;
+
+    --popover: 300 50% 8%;
+    --popover-foreground: 180 100% 90%;
+
+    /* Improved contrast - darker pink with white text */
+    --primary: 320 100% 45%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 300 50% 15%;
+    --secondary-foreground: 180 100% 90%;
+
+    --muted: 300 50% 15%;
+    --muted-foreground: 180 100% 70%;
+
+    /* Improved contrast - darker teal with white text */
+    --accent: 180 100% 45%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 100% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 300 50% 20%;
+    --input: 300 50% 20%;
+    --ring: 320 100% 75%;
+
+    --tumblr-blue: 180 100% 75%;
+    --tumblr-purple: 320 100% 75%;
+    --tumblr-text: 180 100% 90%;
+    --tumblr-dark: 300 50% 8%;
+    --tumblr-darker: 300 50% 5%;
+    --tumblr-sidebar: 300 50% 3%;
+    --tumblr-toggle-active: 180 100% 75%;
+    --tumblr-royal-purple: 320 100% 75%;
+  }
+
+  /* Troll Blood Colors Theme - Enhanced */
+  [data-theme="trollblood"] {
+    --background: 0 50% 5%;
+    --foreground: 0 0% 95%;
+
+    --card: 0 50% 8%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 0 50% 8%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 0 80% 55%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 50% 15%;
+    --secondary-foreground: 0 0% 95%;
+
+    --muted: 0 50% 15%;
+    --muted-foreground: 0 0% 75%;
+
+    --accent: 0 80% 55%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 100% 45%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 50% 20%;
+    --input: 0 50% 20%;
+    --ring: 0 80% 55%;
+
+    --tumblr-blue: 180 80% 55%;
+    --tumblr-purple: 270 80% 55%;
+    --tumblr-text: 0 0% 95%;
+    --tumblr-dark: 0 50% 8%;
+    --tumblr-darker: 0 50% 5%;
+    --tumblr-sidebar: 0 50% 3%;
+    --tumblr-toggle-active: 0 80% 55%;
+    --tumblr-royal-purple: 0 80% 55%;
+  }
+
+  /* Midnight Theme - Enhanced */
+  [data-theme="midnight"] {
+    --background: 240 70% 3%;
+    --foreground: 220 100% 95%;
+
+    --card: 240 70% 6%;
+    --card-foreground: 220 100% 95%;
+
+    --popover: 240 70% 6%;
+    --popover-foreground: 220 100% 95%;
+
+    --primary: 220 100% 65%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 240 70% 10%;
+    --secondary-foreground: 220 100% 95%;
+
+    --muted: 240 70% 10%;
+    --muted-foreground: 220 100% 75%;
+
+    --accent: 220 100% 65%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 100% 65%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 240 70% 15%;
+    --input: 240 70% 15%;
+    --ring: 220 100% 65%;
+
+    --tumblr-blue: 220 100% 65%;
+    --tumblr-purple: 260 100% 75%;
+    --tumblr-text: 220 100% 95%;
+    --tumblr-dark: 240 70% 6%;
+    --tumblr-darker: 240 70% 3%;
+    --tumblr-sidebar: 240 70% 2%;
+    --tumblr-toggle-active: 220 100% 65%;
+    --tumblr-royal-purple: 260 100% 65%;
+  }
+
+  /* Apocalypse Theme - Enhanced with better contrast */
+  [data-theme="apocalypse"] {
+    --background: 0 30% 5%;
+    --foreground: 30 100% 85%;
+
+    --card: 0 30% 8%;
+    --card-foreground: 30 100% 85%;
+
+    --popover: 0 30% 8%;
+    --popover-foreground: 30 100% 85%;
+
+    /* Improved contrast - darker orange with white text */
+    --primary: 20 100% 40%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 30% 15%;
+    --secondary-foreground: 30 100% 85%;
+
+    --muted: 0 30% 15%;
+    --muted-foreground: 30 100% 65%;
+
+    /* Improved contrast - darker orange with white text */
+    --accent: 20 100% 45%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 100% 45%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 30% 20%;
+    --input: 0 30% 20%;
+    --ring: 20 100% 55%;
+
+    --tumblr-blue: 20 100% 55%;
+    --tumblr-purple: 30 100% 65%;
+    --tumblr-text: 30 100% 85%;
+    --tumblr-dark: 0 30% 8%;
+    --tumblr-darker: 0 30% 5%;
+    --tumblr-sidebar: 0 30% 3%;
+    --tumblr-toggle-active: 20 100% 55%;
+    --tumblr-royal-purple: 20 100% 55%;
+  }
+
+  /* Monochrome Theme - Enhanced with better contrast */
+  [data-theme="monochrome"] {
+    --background: 0 0% 5%;
+    --foreground: 0 0% 95%;
+
+    --card: 0 0% 10%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 0 0% 10%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 0 0% 80%;
+    --primary-foreground: 0 0% 0%;
+
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 0 0% 95%;
+
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 70%;
+
+    --accent: 0 0% 80%;
+    --accent-foreground: 0 0% 0%;
+
+    /* Improved contrast - darker gray with white text */
+    --destructive: 0 0% 40%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 0 0% 80%;
+
+    --tumblr-blue: 0 0% 80%;
+    --tumblr-purple: 0 0% 85%;
+    --tumblr-text: 0 0% 95%;
+    --tumblr-dark: 0 0% 10%;
+    --tumblr-darker: 0 0% 5%;
+    --tumblr-sidebar: 0 0% 3%;
+    --tumblr-toggle-active: 0 0% 80%;
+    --tumblr-royal-purple: 0 0% 80%;
+  }
+
+  /* Ocean Theme - Enhanced with better contrast */
+  [data-theme="ocean"] {
+    --background: 200 70% 5%;
+    --foreground: 180 100% 95%;
+
+    --card: 200 70% 8%;
+    --card-foreground: 180 100% 95%;
+
+    --popover: 200 70% 8%;
+    --popover-foreground: 180 100% 95%;
+
+    /* Improved contrast - darker teal with white text */
+    --primary: 190 100% 35%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 200 70% 15%;
+    --secondary-foreground: 180 100% 95%;
+
+    --muted: 200 70% 15%;
+    --muted-foreground: 180 100% 75%;
+
+    /* Improved contrast - darker teal with white text */
+    --accent: 190 100% 40%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 100% 45%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 200 70% 20%;
+    --input: 200 70% 20%;
+    --ring: 190 100% 55%;
+
+    --tumblr-blue: 190 100% 55%;
+    --tumblr-purple: 210 100% 65%;
+    --tumblr-text: 180 100% 95%;
+    --tumblr-dark: 200 70% 8%;
+    --tumblr-darker: 200 70% 5%;
+    --tumblr-sidebar: 200 70% 3%;
+    --tumblr-toggle-active: 190 100% 55%;
+    --tumblr-royal-purple: 210 100% 55%;
+  }
+
+  /* Alternia Theme - Enhanced with better contrast */
+  [data-theme="alternia"] {
+    --background: 45 20% 10%;
+    --foreground: 45 30% 95%;
+
+    --card: 45 20% 15%;
+    --card-foreground: 45 30% 95%;
+
+    --popover: 45 20% 15%;
+    --popover-foreground: 45 30% 95%;
+
+    --primary: 45 80% 60%;
+    --primary-foreground: 0 0% 0%;
+
+    /* Improved contrast - darker orange with white text */
+    --secondary: 15 80% 40%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 45 20% 20%;
+    --muted-foreground: 45 30% 80%;
+
+    /* Improved contrast - darker orange with white text */
+    --accent: 15 80% 45%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 80% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 45 20% 25%;
+    --input: 45 20% 25%;
+    --ring: 45 80% 60%;
+
+    --tumblr-blue: 45 80% 60%;
+    --tumblr-purple: 15 80% 60%;
+    --tumblr-text: 45 30% 95%;
+    --tumblr-dark: 45 20% 15%;
+    --tumblr-darker: 45 20% 10%;
+    --tumblr-sidebar: 45 20% 5%;
+    --tumblr-toggle-active: 45 80% 60%;
+    --tumblr-royal-purple: 15 80% 60%;
+  }
+
+  /* Prospit Theme - Enhanced with better contrast */
+  [data-theme="prospit"] {
+    --background: 45 80% 5%;
+    --foreground: 45 100% 85%;
+
+    --card: 45 80% 10%;
+    --card-foreground: 45 100% 85%;
+
+    --popover: 45 80% 10%;
+    --popover-foreground: 45 100% 85%;
+
+    /* Improved contrast - darker gold with black text */
+    --primary: 45 100% 45%;
+    --primary-foreground: 0 0% 0%;
+
+    --secondary: 45 80% 15%;
+    --secondary-foreground: 45 100% 85%;
+
+    --muted: 45 80% 15%;
+    --muted-foreground: 45 100% 65%;
+
+    /* Improved contrast - darker gold with black text */
+    --accent: 40 100% 50%;
+    --accent-foreground: 0 0% 0%;
+
+    --destructive: 0 100% 45%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 45 80% 20%;
+    --input: 45 80% 20%;
+    --ring: 45 100% 65%;
+
+    --tumblr-blue: 40 100% 80%;
+    --tumblr-purple: 45 100% 65%;
+    --tumblr-text: 45 100% 85%;
+    --tumblr-dark: 45 80% 10%;
+    --tumblr-darker: 45 80% 5%;
+    --tumblr-sidebar: 45 80% 3%;
+    --tumblr-toggle-active: 45 100% 65%;
+    --tumblr-royal-purple: 45 100% 65%;
+  }
+
+  /* Derse Theme - Enhanced */
+  [data-theme="derse"] {
+    --background: 270 80% 5%;
+    --foreground: 275 80% 95%;
+
+    --card: 270 80% 8%;
+    --card-foreground: 275 80% 95%;
+
+    --popover: 270 80% 8%;
+    --popover-foreground: 275 80% 95%;
+
+    --primary: 270 70% 55%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 270 80% 15%;
+    --secondary-foreground: 275 80% 95%;
+
+    --muted: 270 80% 15%;
+    --muted-foreground: 275 80% 75%;
+
+    --accent: 275 80% 70%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 100% 65%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 270 80% 20%;
+    --input: 270 80% 20%;
+    --ring: 270 70% 55%;
+
+    --tumblr-blue: 275 80% 70%;
+    --tumblr-purple: 270 70% 55%;
+    --tumblr-text: 275 80% 95%;
+    --tumblr-dark: 270 80% 8%;
+    --tumblr-darker: 270 80% 5%;
+    --tumblr-sidebar: 270 80% 3%;
+    --tumblr-toggle-active: 270 70% 55%;
+    --tumblr-royal-purple: 270 70% 55%;
+  }
+
+  /* SBURB Theme - Enhanced with better contrast */
+  [data-theme="sburb"] {
+    --background: 120 100% 2%;
+    --foreground: 120 100% 90%;
+
+    --card: 120 100% 5%;
+    --card-foreground: 120 100% 90%;
+
+    --popover: 120 100% 5%;
+    --popover-foreground: 120 100% 90%;
+
+    /* Improved contrast - darker green with white text */
+    --primary: 120 100% 30%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 120 100% 10%;
+    --secondary-foreground: 120 100% 90%;
+
+    --muted: 120 100% 10%;
+    --muted-foreground: 120 100% 70%;
+
+    /* Improved contrast - darker green with white text */
+    --accent: 120 70% 40%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 120 100% 15%;
+    --input: 120 100% 15%;
+    --ring: 120 100% 45%;
+
+    --tumblr-blue: 120 100% 60%;
+    --tumblr-purple: 120 70% 60%;
+    --tumblr-text: 120 100% 90%;
+    --tumblr-dark: 120 100% 5%;
+    --tumblr-darker: 120 100% 2%;
+    --tumblr-sidebar: 120 100% 1%;
+    --tumblr-toggle-active: 120 100% 45%;
+    --tumblr-royal-purple: 120 100% 45%;
+  }
+
+  * {
+    border-color: hsl(var(--border));
+  }
+
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-family: var(--font-inter), sans-serif;
+    height: 100%;
+    overflow: hidden; /* Prevent body scrolling */
+  }
+
+  html {
+    height: 100%;
+  }
+
+  /* Fixed viewport height for mobile */
+  html,
+  body {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    overflow: hidden;
+  }
+
+  /* Make sure the app takes the full height and width */
+  #__next,
+  main {
+    height: 100%;
+    width: 100%;
+  }
+
+  /* Ensure content areas are scrollable but contained */
+  .content-area {
+    height: 100%;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Mobile specific fixes */
+  @media (max-width: 768px) {
+    .tumblr-sidebar-link {
+      font-size: 0.875rem;
+      padding: 0.375rem 0.5rem;
+    }
+
+    /* Add padding to the bottom of scrollable areas to account for mobile nav */
+    .main-content {
+      padding-bottom: 4rem;
+    }
+  }
+
+  /* Use direct CSS instead of @apply for link styling */
+  a {
+    color: hsl(var(--tumblr-royal-purple));
+    transition: color 0.2s ease;
+  }
+
+  a:hover {
+    color: hsl(var(--tumblr-royal-purple) / 0.8);
+  }
+
+  .font-mono {
+    font-family: var(--font-mono), monospace;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: hsl(var(--tumblr-darker));
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: hsl(var(--tumblr-sidebar));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: hsl(var(--tumblr-royal-purple) / 0.5);
+}
+
+/* Title screen animations */
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Background effects */
+.bg-scanlines {
+  background: linear-gradient(to bottom, transparent 50%, rgba(0, 0, 0, 0.3) 50%);
+  background-size: 100% 4px;
+}
+
+.bg-crt-overlay {
+  background: radial-gradient(ellipse at center, transparent 0%, rgba(0, 0, 0, 0.2) 80%, rgba(0, 0, 0, 0.4) 100%);
+}
+
+@keyframes flicker {
+  0% {
+    opacity: 0.1;
+  }
+  5% {
+    opacity: 0.2;
+  }
+  10% {
+    opacity: 0.1;
+  }
+  15% {
+    opacity: 0.3;
+  }
+  20% {
+    opacity: 0.1;
+  }
+  25% {
+    opacity: 0.2;
+  }
+  30% {
+    opacity: 0.1;
+  }
+  35% {
+    opacity: 0.3;
+  }
+  40% {
+    opacity: 0.1;
+  }
+  45% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 0.1;
+  }
+  55% {
+    opacity: 0.3;
+  }
+  60% {
+    opacity: 0.1;
+  }
+  65% {
+    opacity: 0.2;
+  }
+  70% {
+    opacity: 0.1;
+  }
+  75% {
+    opacity: 0.3;
+  }
+  80% {
+    opacity: 0.1;
+  }
+  85% {
+    opacity: 0.2;
+  }
+  90% {
+    opacity: 0.1;
+  }
+  95% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 0.1;
+  }
+}
+
+.animate-flicker {
+  animation: flicker 5s infinite;
+}
+
+/* Add these animations after the existing ones */
+@keyframes glitch {
+  0% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(-2px, 2px);
+  }
+  40% {
+    transform: translate(-2px, -2px);
+  }
+  60% {
+    transform: translate(2px, 2px);
+  }
+  80% {
+    transform: translate(2px, -2px);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+
+@keyframes glitch-2 {
+  0% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(2px, -2px);
+  }
+  40% {
+    transform: translate(2px, 2px);
+  }
+  60% {
+    transform: translate(-2px, -2px);
+  }
+  80% {
+    transform: translate(-2px, 2px);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+
+.animate-glitch {
+  animation: glitch 2s infinite;
+}
+
+.animate-glitch-2 {
+  animation: glitch-2 2.5s infinite;
+}
+
+/* Tumblr-inspired styles */
+@layer components {
+  .tumblr-sidebar-link {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.375rem;
+    color: hsl(var(--tumblr-royal-purple));
+    transition: background-color 0.2s ease;
+  }
+
+  .tumblr-sidebar-link:hover {
+    background-color: hsl(var(--secondary));
+  }
+
+  .tumblr-sidebar-link.active {
+    background-color: hsl(var(--secondary));
+    color: hsl(var(--tumblr-royal-purple));
+  }
+
+  .tumblr-section-header {
+    color: hsl(var(--tumblr-purple));
+    font-weight: 500;
+    font-size: 1.125rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .tumblr-card {
+    background-color: hsl(var(--tumblr-dark));
+    border: none;
+    border-radius: 0.375rem;
+    padding: 1rem;
+  }
+
+  .tumblr-button {
+    background-color: hsl(var(--tumblr-royal-purple));
+    color: white;
+    border-radius: 0.375rem;
+  }
+
+  .tumblr-button:hover {
+    background-color: hsl(var(--tumblr-royal-purple) / 0.9);
+  }
+
+  .tumblr-input {
+    background-color: hsl(var(--tumblr-darker));
+    border-color: hsl(var(--border));
+    color: hsl(var(--foreground));
+  }
+
+  @keyframes collapsible-down {
+    from {
+      height: 0;
+    }
+    to {
+      height: var(--radix-collapsible-content-height);
+    }
+  }
+
+  @keyframes collapsible-up {
+    from {
+      height: var(--radix-collapsible-content-height);
+    }
+    to {
+      height: 0;
+    }
+  }
+
+  .animate-collapsible-down {
+    animation: collapsible-down 0.2s ease-out;
+  }
+
+  .animate-collapsible-up {
+    animation: collapsible-up 0.2s ease-out;
+  }
+}
+
