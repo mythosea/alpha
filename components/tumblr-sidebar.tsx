@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react"
 import Link from "next/link"
 import { usePathname, useRouter } from "next/navigation"
-import { MessageSquare, Settings, PlusCircle, Database, Search, LogOut } from "lucide-react"
+import { MessageSquare, Settings, PlusCircle, Database, Search, LogOut, Grid3x3 } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { ZodiacSymbol, bloodColorToZodiac } from "@/components/zodiac-symbol"
@@ -64,6 +64,12 @@ export function TumblrSidebar() {
       icon: Search,
       href: "/search",
       active: pathname === "/search",
+    },
+    {
+      label: "Bingo Run",
+      icon: Grid3x3,
+      href: "/bingo-roguelike",
+      active: pathname === "/bingo-roguelike",
     },
     {
       label: "Settings",
@@ -201,4 +207,3 @@ export function TumblrSidebar() {
     </div>
   )
 }
-
